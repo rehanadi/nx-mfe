@@ -1,8 +1,10 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
-  name: 'custom-mfe',
-  remotes: ["products"],
+  name: 'host',
+  remotes: [
+    ['products', 'products@http://localhost:4201/remoteEntry.js'],
+  ],
 };
 
 export default config;
