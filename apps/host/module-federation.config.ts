@@ -8,7 +8,8 @@ const sharedLibraries = [
 const config: ModuleFederationConfig = {
   name: 'host',
   remotes: [
-    ['products', 'products@http://localhost:4201/mf-manifest.json'],
+    // Load in build time
+    // ['products', 'products@http://localhost:4201/mf-manifest.json'],
   ],
   shared: (libraryName, _sharedConfig) => {
     if (!sharedLibraries.includes(libraryName)) {
