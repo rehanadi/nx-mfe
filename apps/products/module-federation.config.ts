@@ -6,8 +6,8 @@ const config: ModuleFederationConfig = {
   name: 'products',
   filename: 'remoteEntry.js',
   exposes: {
-    './RemoteButton': './src/components/RemoteButton.tsx',
     './Types': './src/types.d.ts',
+    './ProductsList': './src/components/ProductsList/ProductsList.tsx'
   },
   shared: ["react", "react-dom"],
 };

@@ -1,13 +1,14 @@
 import useRemote from "../hooks/useRemote";
-import type RemoteButtonType from "products/RemoteButton";
+//@ts-expect-error
+import type ProductsListType from 'products/ProductsList';
 
 export function App() {
-  const RemoteButton = useRemote<typeof RemoteButtonType>({ scope: "products", module: "RemoteButton" });
+  const RemoteProductsList = useRemote<typeof ProductsListType>({ scope: 'products', module: 'ProductsList' });
 
   return (
     <div>
-      <p>This is running from the host app</p>
-      <RemoteButton />
+      <p>Hi I'm the host.</p>
+      <RemoteProductsList />
     </div>
   );
 }

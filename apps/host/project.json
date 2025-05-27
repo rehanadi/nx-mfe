@@ -8,7 +8,7 @@
     "build": {
       "executor": "@nx/rspack:rspack",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+      "defaultConfiguration": "development",
       "options": {
         "target": "web",
         "outputPath": "dist/apps/host",
@@ -33,9 +33,10 @@
       }
     },
     "serve": {
-      "executor": "@nx/rspack:module-federation-dev-server",
+      "executor": "@nx/rspack:dev-server",
       "options": {
-        "buildTarget": "host:build:development"
+        "buildTarget": "host:build:development",
+        "port": 4200
       },
       "configurations": {
         "development": {},

@@ -1,4 +1,4 @@
-import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
+import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 
 type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugin>[0];
 
@@ -7,9 +7,8 @@ const config: ModuleFederationConfig = {
   filename: 'remoteEntry.js',
   remotes: {
     // Load in build time
-    'products': 'products@http://localhost:4201/mf-manifest.json',
+    "products": "products@http://localhost:4201/mf-manifest.json"
   },
   shared: ["react", "react-dom"],
 };
-
 export default config;
